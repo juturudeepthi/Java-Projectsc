@@ -10,6 +10,7 @@ In this project, hotel owners can register, log in, and manage their restaurant 
 
 ---
 
+![image alt](https://github.com/juturudeepthi/Java-Projectsc/blob/bfce7d2c2cc2b94704c0fb54862d00cefe282020/Screenshot%202026-08-01%20211455.png)
 ## Features
 
 * Hotel Registration
