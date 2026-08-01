@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodieHub - Login</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .main-container {
+      width: 100%;
+      max-width: 1150px;
+    }
+
+    .brand-section {
+      color: white;
+      padding: 40px;
+    }
+
+    .brand-title {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #ff4d4d;
+    }
+
+    .brand-text {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #f1f1f1;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-pills .nav-link {
+      border-radius: 10px;
+      color: #444;
+      font-weight: 600;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: #ff4d4d;
+    }
+
+    .form-control {
+      height: 50px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #ff4d4d;
+    }
+
+    .btn-login {
+      background-color: #ff4d4d;
+      border: none;
+      height: 50px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-login:hover {
+      background-color: #e63946;
+    }
+
+    .new-user-link {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .new-user-link:hover {
+      text-decoration: underline;
+    }
+
+    .tab-pane {
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .brand-section {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+
+      .brand-title {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container main-container">
+    <div class="row align-items-center g-4">
+
+      <!-- Left Branding -->
+      <div class="col-lg-6">
+        <div class="brand-section">
+          <h1 class="brand-title">FoodieHub</h1>
+          <p class="brand-text">
+            Discover the best food & restaurants around you.
+            Login as a User or Hotel Partner and start your journey.
+          </p>
+        </div>
+      </div>
+
+      <!-- Login Card -->
+      <div class="col-lg-6">
+        <div class="card login-card border-0">
+          <div class="card-body p-4 p-md-5">
+
+            <h2 class="text-center fw-bold mb-4">Welcome Back</h2>
+
+            <!-- Tabs -->
+            <ul class="nav nav-pills nav-justified mb-4" id="loginTabs">
+              <li class="nav-item">
+                <button
+                  class="nav-link active"
+                  data-bs-toggle="pill"
+                  data-bs-target="#userLogin"
+                >
+                  User Login
+                </button>
+              </li>
+
+              <li class="nav-item">
+                <button
+                  class="nav-link"
+                  data-bs-toggle="pill"
+                  data-bs-target="#hotelLogin"
+                >
+                  Hotel Login
+                </button>
+              </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <!-- User Login -->
+              <div class="tab-pane fade show active" id="userLogin">
+
+                <form>
+                  <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Enter your password"
+                    />
+                  </div>
+
+                  <div class="d-grid mb-3">
+                    <button class="btn btn-danger btn-login">
+                      Login as User
+                    </button>
+                  </div>
+
+                  <div class="text-center">
+                    <span>New User?</span>
+                    <a href="#" class="new-user-link">
+                      Create Account
+                    </a>
+                  </div>
+                </form>
+
+              </div>
+
+              <!-- Hotel Login -->
+              <div class="tab-pane fade" id="hotelLogin">
+
+                <form action="hotelLogin" method="post">
+                  <div class="mb-3">
+                    <label class="form-label">Hotel Id</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter hotel id"
+                      name="hotelId"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Enter password"
+                      name="hotelPassword"
+                    />
+                  </div>
+
+                  <div class="d-grid mb-3">
+                    <button class="btn btn-danger btn-login">
+                      Login as Hotel
+                    </button>
+                  </div>
+
+                  <div class="text-center">
+                    <span>New Hotel Partner?</span>
+                    <a href="HotelRegistration.html" class="new-user-link">
+                      Register Hotel
+                    </a>
+                  </div>
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
