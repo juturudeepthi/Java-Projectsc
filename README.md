@@ -1,4 +1,4 @@
-Java Projects
+## Java Projects
 
 # 🍽️ Zomato Clone
 
